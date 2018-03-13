@@ -1,0 +1,9 @@
+development:
+  adapter: solr
+  url: <%= Rails.application.secrets[:blacklight_url] %>
+test:
+  adapter: solr
+  url: <%= ENV['TRAVIS'] ? 'http://localhost:8985/solr/hydra-test' : Rails.application.secrets[:blacklight_url] %>
+production:
+  adapter: solr
+  url: <%= Rails.application.secrets[:blacklight_url] %>

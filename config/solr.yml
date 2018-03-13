@@ -1,0 +1,6 @@
+development:
+  url: <%= Rails.application.secrets[:solr_url] %>
+test:
+  url: <%= ENV['TRAVIS'] ? 'http://localhost:8985/solr/hydra-test' : Rails.application.secrets[:solr_url] %>
+production:
+  url: <%= Rails.application.secrets[:solr_url] %>
