@@ -70,3 +70,4 @@ end
 gem 'riiif', '~> 1.1'
 # Local Gem additions
 gem 'pg'
+gem 'sidekiq'
