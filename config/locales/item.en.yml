@@ -1,0 +1,8 @@
+en:
+  hyrax:
+    icons:
+      item:     'fa fa-file-text-o'
+    select_type:
+      item:
+        description:        "Item works"
+        name:               "Item"
