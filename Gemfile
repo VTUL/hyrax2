@@ -71,3 +71,7 @@ gem 'riiif', '~> 1.1'
 # Local Gem additions
 gem 'pg'
 gem 'sidekiq'
+
+gem 'hydra-role-management'
+gem 'omniauth-cas'
+gem 'net-ldap'
