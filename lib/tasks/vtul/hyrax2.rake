@@ -1,6 +1,6 @@
 require 'net/ldap'
 
-namespace :data_science do
+namespace :vt_hyrax2 do
   desc 'Create default roles.'
   task add_roles: :environment do
     ['admin'].each do |role_name|
