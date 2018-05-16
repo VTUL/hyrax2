@@ -85,7 +85,7 @@ Hyrax.config do |config|
   # config.redis_namespace = "hyrax"
 
   # Path to the file characterization tool
-  # config.fits_path = "fits.sh"
+  config.fits_path = "/opt/fits/fits.sh"
 
   # Path to the file derivatives creation tool
   # config.libreoffice_path = "soffice"
@@ -116,7 +116,8 @@ Hyrax.config do |config|
   # Should work creation require file upload, or can a work be created first
   # and a file added at a later time?
   # The default is true.
-  # config.work_requires_files = true
+  # So to be able to batch create works without files
+  config.work_requires_files = false
 
   # Enable IIIF image service. This is required to use the
   # UniversalViewer-ified show page
