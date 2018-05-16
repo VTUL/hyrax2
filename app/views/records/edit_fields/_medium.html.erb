@@ -1,0 +1,4 @@
+<%= f.input :medium, as: :select,
+    collection: Hyrax::MediumsService.select_all_options,
+    input_html: { class: 'form-control', multiple: true }
+%>
