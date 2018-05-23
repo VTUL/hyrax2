@@ -69,4 +69,44 @@ namespace :vt_hyrax2 do
       end
     end
   end
+
+  desc 'Establish initial controlled vocabularies for medium, tags, resource type fields'
+  task add_controlled_vocabs: :environment do
+    medium_names = ["Blueprints", "Charcoal", "Color pencil", "Computer-aided design",
+		    "Graphite", "Ink","Marker pen", "Linocuts (prints)",
+                    "Photographic Print - Black and White", "Photographic print - Color",
+		    "Printed ink", "Watercolors", "Woodcut (prints)"]
+    medium_names.each do |name|
+      ControlledVocab.find_or_create_by(name: name) do |c_v|
+        c_v.field = 'medium_sim'
+        c_v.image_filename = name.downcase.gsub(/[\W_]/,'') + '.jpg'
+      end
+    end
+    type_names = ["Articles", "Clippings", "Correspondence", "Curriculum Vitae",
+                  "Digital 3D model", "Computer drawings", "Digital renderings",
+                  "Documents", "Architectural drawings (visual works)", "As-built drawings",
+                  "Axonometric projections (images)", "Conceptual drawings",
+                  "Detail drawings (drawings)", "Detail studies", "Elevations (orthographic projections)",
+                  "Floor plans (orthographic projections)", "Interior design",
+                  "Perspective views (images)", "Presentation drawings (proposals)",
+                  "Sections (orthographic projections)", "Site plans", "Letters",
+                  "Newsletters", "Notebooks", "Pamphlets", "Photographs", "Architectural models",
+                  "Postcards", "Posters", "Scale models", "Sketchbooks", "Sketches", "Travel sketches"]
+    type_names.each do |name|
+      ControlledVocab.find_or_create_by(name: name) do |c_v|
+        c_v.field = 'resource_type_sim'
+        c_v.image_filename = name.downcase.gsub(/[\W_]/,'') + '.jpg'
+      end
+    end
+    tags_names = ["single-story", "two-story", "3 to 5 stories", "6 to 10 stories", "11 to 20 stories",
+                  "Commercial and Office", "Educational and Research", "Healthcare", "Industrial",
+                  "Interior Design", "Landscape Architecture", "Portrait", "Residential",
+                  "Residential-Housing development", "Residential-Multi-family", "Residential-Single-family",
+                  "Single-family", "Urban Design", "Student projects"]
+    tags_names.each do |name|
+      ControlledVocab.find_or_create_by(name: name) do |c_v|
+        c_v.field = 'tags_sim'
+      end
+    end
+  end
 end

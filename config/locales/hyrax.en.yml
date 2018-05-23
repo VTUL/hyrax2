@@ -51,7 +51,101 @@ en:
     footer:
       copyright_html: "<strong>Copyright &copy; 2017 Samvera</strong> Licensed under the Apache License, Version 2.0"
       service_html: A service of <a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera</a>.
-    institution_name:       "Institution"
-    institution_name_full:  "The Institution Name"
+    institution_name:       "Virginia Tech"
+    institution_name_full:  "Virginia Polytechnic Institute and State University"
     product_name:           "Hyrax"
     product_twitter_handle: "@SamveraRepo"
+    admin:
+      sidebar:
+        vocabs: "Vocabularies"
+        list_vocabs: "Controlled Vocabularies"
+        new_vocab: "New Controlled Vocabulary"
+    search:
+      form:
+        q:
+          label:          "Search IAWA"
+        option:
+          all:
+            label_short:  "All"
+            label_long:   "All of IAWA"
+          items:
+            label_short:  "All Items"
+            label_long:   "All Items"
+          collections:
+            label_short:  "All Collections"
+            label_long:   "All Collections"
+          my_works:
+            label_short:  "My Items"
+            label_long:   "My Items"
+    homepage:
+      browse_collections: "Browse Collections"
+      browse_works:       "Browse Items"    
+      recently_uploaded:
+        no_public:          'No public item has been contributed.'
+    toolbar:
+      works:
+        menu: "Items"
+        my: "My Items"
+        batch_import: "Batch Import"
+    controls:
+      terms:                "Permission Page"
+    dashboard:
+      view_works:               "View Items"
+      create_work:              "Create Item"
+      transfer_works_link:      "Select items to transfer"
+      no_transfer_requests:     "You haven't received any item transfer requests"
+      no_transfers:             "You haven't transferred any item"
+      stats:
+        works:              "Items created"
+      my:
+        works:        "My Items"
+        facet_label:
+          works:       "Filter your items"
+        action:
+          edit_work:               "Edit Item"
+          delete_work:             "Delete Item"
+          transfer:                "Transfer Ownership of Item"
+          work_confirmation:       "Deleting a item from %{application_name} is permanent. Click OK to delete this item from %{application_name}, or Cancel to cancel this operation"
+    works:
+      new:
+        header: Batch Attach Files
+        in_collections: This Item in Collections
+        after_attach_html: "You uploaded file is being processed by %{application_name} in the background. The files will be attached to their corresponding items until this process is complete (shouldn't take too long, hang in there!). You may need to refresh this page to see these updates."
+      edit:
+        header: Edit Item
+        in_collections: This Item in Collections
+      progress:
+        header: Save Item
+    batch_uploads:
+      new:
+        header: Batch Attach Files to Items
+        in_collections: These Items in Collections
+      progress:
+        header: Save Items
+      files:
+        instructions: Each file will be attach to the corresponding item based on the naming convention.
+    batch_import:
+      new:
+        header: Batch Import Items
+        after_import_html: "Your metadata are being imported by %{application_name} in the background. Items will be marked <span class=\"label label-danger\" title=\"Private\">Private</span> until this process is complete (shouldn't take too long, hang in there!). You may need to refresh this page to see these updates." 
+    collection:
+      actions:
+        add_works:
+          label: "Add Items"
+          desc: "Add items to this Collection"
+  simple_form:
+    hints:
+      generic_work:
+        title: "A name to aid in identifying a item."
+        keyword: "Words or phrases you select to describe what the item is about. These are used to search for content."
+        subject: "Headings or index terms describing what the item is about; these do need to conform to an existing vocabulary."
+        creator_html: "The person or group responsible for the item. Usually this is the author of the content. Personal names should be entered with the last name first, e.g. &quot;Smith, John.&quot;."
+        related_url: "A link to a website or other specific content (audio, video, PDF document) related to the item. An example is the URL of a research project from which the item was derived."
+        based_near_html: "A place name related to the item, such as its site of publication, or the city, state, or country the item contents are about. Calls upon the <a href='http://www.geonames.org'>GeoNames web service</a>."
+        contributor_html: "A person or group you want to recognize for playing a role in the creation of the item, but not the primary role."
+        date: "The date on which the item was generated."
+        description: "Free-text notes about the item. Examples include abstracts of a paper or citation information for a journal article."
+        identifier: "A unique handle identifying the item. An example would be a DOI for a journal article, or an ISBN or OCLC number for a book."
+        language: "The language of the item's content."
+        publisher: "The person or group making the item available. Generally this is the institution."
+        rights: "Licensing and distribution information governing access to the item. Select from the provided drop-down list."

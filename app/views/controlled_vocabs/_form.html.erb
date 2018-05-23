@@ -1,0 +1,29 @@
+<%= form_for(controlled_vocab) do |f| %>
+  <% if controlled_vocab.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(controlled_vocab.errors.count, "error") %> prohibited this controlled_vocab from being saved:</h2>
+
+      <ul>
+      <% controlled_vocab.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :field %><br>
+    <%= f.collection_select :field, @field_names, :first, :last %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :image_filename %><br>
+    <%= f.text_field :image_filename %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
