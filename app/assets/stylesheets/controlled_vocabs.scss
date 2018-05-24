@@ -1,0 +1,33 @@
+// Place all the styles related to the ControlledVocabs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+table.controlled_vocab {
+  border-collapse: collapse;
+}
+
+.controlled_vocab td, .controlled_vocab th {
+  padding: 4px 10px;
+  border: solid 1px #AAA;
+}
+
+.controlled_vocab .img_fname {
+  text-align: right;
+}
+
+.controlled_vocab th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.controlled_vocab th > .asc {
+  background-image: image-url("vtul/up_arrow.gif");
+}
+
+.controlled_vocab th > .desc {
+  background-image: image-url("vtul/down_arrow.gif");
+}
+
+.even {
+  background-color: #D6E1C3; 
+}

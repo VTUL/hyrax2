@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Field:</strong>
+  <%= @controlled_vocab.field %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @controlled_vocab.name %>
+</p>
+
+<p>
+  <strong>Image filename:</strong>
+  <%= @controlled_vocab.image_filename %>
+</p>
+
+<%= link_to 'Edit', edit_controlled_vocab_path(@controlled_vocab) %> |
+<%= link_to 'Back', controlled_vocabs_path %>
