@@ -98,14 +98,14 @@ namespace :vt_hyrax2 do
         c_v.image_filename = name.downcase.gsub(/[\W_]/,'') + '.jpg'
       end
     end
-    tags_names = ["single-story", "two-story", "3 to 5 stories", "6 to 10 stories", "11 to 20 stories",
+    keyword_names = ["single-story", "two-story", "3 to 5 stories", "6 to 10 stories", "11 to 20 stories",
                   "Commercial and Office", "Educational and Research", "Healthcare", "Industrial",
                   "Interior Design", "Landscape Architecture", "Portrait", "Residential",
                   "Residential-Housing development", "Residential-Multi-family", "Residential-Single-family",
                   "Single-family", "Urban Design", "Student projects"]
-    tags_names.each do |name|
+    keyword_names.each do |name|
       ControlledVocab.find_or_create_by(name: name) do |c_v|
-        c_v.field = 'tags_sim'
+        c_v.field = 'keyword_sim'
       end
     end
   end
