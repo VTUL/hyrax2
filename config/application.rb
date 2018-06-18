@@ -19,6 +19,7 @@ module Hyrax2
     config.to_prepare do
       Hyrax::Forms::CollectionForm.prepend Hyrax::Forms::CollectionFormOverride
       Hyrax::CollectionPresenter.prepend Hyrax::CollectionPresenterOverride
+      ContentBlock.prepend ContentBlockOverride
     end
   end
 end
