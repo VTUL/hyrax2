@@ -1,5 +1,9 @@
 module IawaHelper
 
+  def rights_statement_link(rights)
+    link_to rights, hyrax.terms_path
+  end
+
   def link_to_html(field, show_link = true)
     if field.is_a? Hash
         options = field[:config].separator_options || {}

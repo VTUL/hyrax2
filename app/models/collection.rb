@@ -4,4 +4,9 @@ class Collection < ActiveFedora::Base
   # You can replace these metadata if they're not suitable
   include Hyrax::BasicMetadata
   self.indexer = Hyrax::CollectionWithBasicMetadataIndexer
+
+  validates :rights, presence: { message: 'Your collection must have a right.' }
+  validates :identifier, presence: { message: 'Your collection must have an identifier.' }
+  validates :rights_holder, presence: { message: 'Your collection must have a rights holder.' }
+
 end

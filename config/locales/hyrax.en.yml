@@ -150,8 +150,9 @@ en:
     labels:
       defaults:
         admin_set_id: Administrative Set
-        based_near: Location
+        based_near: Based Near
         creator: Creator
+        coverage: Location
         location: Belongs to
         date_created: Date Created
         description: Abstract or Summary
