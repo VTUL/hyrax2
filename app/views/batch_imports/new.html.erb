@@ -1,0 +1,30 @@
+<h1><%= t('iawa.batch_import.heading') %></h1>
+<p>Please upload a CSV file to import items. The first row should be metadata fields, where the following fields are required:
+  <ul>
+  <li><b>Identifier</b>: single-value field</li>
+  <li><b>Title</b>: single-value field</li>
+  </ul>
+If the <b>Identifier</b> field matches an existing item, the item will be updated instead of creating a new one.
+</p>
+<%= form_for @batch_import do |f| %>
+  <% if @batch_import.errors.any? %>
+    <div id="error_explanation" class="col-md-12">
+      <h2><%= pluralize(@batch_import.errors.count, "error") %> prohibited this import from completing:</h2>
+      <ul>
+      <% @batch_import.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= render partial: 'manifest_file', locals: {f: f} %>
+      <%= render partial: 'files_directory', locals: {f: f} %>
+      <div class="form-group">
+        <%= f.submit "Import", id: "batch_imports_submit_button", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

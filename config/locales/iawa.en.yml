@@ -1,0 +1,9 @@
+en:
+  iawa:
+    does_not_exist: "%{target} does not exist"
+    batch_import:
+      heading: "Batch Import Items"
+      invalid_metadata_header: "Invalid header: %{header}"
+      invalid_metadata_value: "Invalid value in row %{row}: %{value} for metadata %{field}"
+      unknow_file_type: "Unknown file type: %{file}"
+      parent_collection_does_not_exist: "does not exist with identifier %{identifier}"
