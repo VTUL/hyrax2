@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   resources :controlled_vocabs
+  resources :batch_imports, only: [:new, :create], controller: 'batch_imports'
   mount Riiif::Engine => 'images', as: :riiif if Hyrax.config.iiif_image_server?
   mount Blacklight::Engine => '/'
   
