@@ -73,36 +73,41 @@ namespace :vt_hyrax2 do
   desc 'Establish initial controlled vocabularies for medium, tags, resource type fields'
   task add_controlled_vocabs: :environment do
     medium_names = ["Blueprints", "Charcoal", "Color pencil", "Computer-aided design",
-		    "Graphite", "Ink","Marker pen", "Linocuts (prints)",
+		    "Diazotypes (copies)", "Graphite", "Ink", "Linocuts (prints)",
+                    "Marker pen", "Negatives (photographs)", "Pastels (Visual works)",
                     "Photographic Print - Black and White", "Photographic print - Color",
-		    "Printed ink", "Watercolors", "Woodcut (prints)"]
+		    "Printed ink", "Slides (photographs)", "Stats (copies)", "Watercolors",
+                    "Woodcut (prints)"]
     medium_names.each do |name|
       ControlledVocab.find_or_create_by(name: name) do |c_v|
         c_v.field = 'medium_sim'
         c_v.image_filename = name.downcase.gsub(/[\W_]/,'') + '.jpg'
       end
     end
-    type_names = ["Articles", "Clippings", "Correspondence", "Curriculum Vitae",
-                  "Digital 3D model", "Computer drawings", "Digital renderings",
-                  "Documents", "Architectural drawings (visual works)", "As-built drawings",
-                  "Axonometric projections (images)", "Conceptual drawings",
-                  "Detail drawings (drawings)", "Detail studies", "Elevations (orthographic projections)",
-                  "Floor plans (orthographic projections)", "Interior design",
-                  "Perspective views (images)", "Presentation drawings (proposals)",
-                  "Sections (orthographic projections)", "Site plans", "Letters",
-                  "Newsletters", "Notebooks", "Pamphlets", "Photographs", "Architectural models",
-                  "Postcards", "Posters", "Scale models", "Sketchbooks", "Sketches", "Travel sketches"]
+    type_names = ["Architectural drawings (visual works)", "Architectural models", "Articles",
+                  "As-built drawings", "Axonometric projections (images)", "Clippings",
+                  "Computer drawings", "Conceptual drawings", "Contact sheets", "Correspondence",
+                  "Curriculum Vitae", "Detail drawings (drawings)", "Detail studies",
+                  "Digital 3D model", "Digital renderings", "Documents", "Elevations (orthographic projections)",
+                  "Ephemera", "Floor plans (orthographic projections)", "Handbooks and manuals",
+                  "Interior design", "Letters", "Maps", "Newsletters", "Notebooks", "Pamphlets",
+                  "Perspective views (images)", "Photographs", "Postcards", "Posters",
+                  "Presentation drawings (proposals)", "Scale models", "Schedules (architectural records)",
+                  "Sections (orthographic projections)", "Site plans", "Sketchbooks", "Sketches", "Travel sketches"]
     type_names.each do |name|
       ControlledVocab.find_or_create_by(name: name) do |c_v|
         c_v.field = 'resource_type_sim'
         c_v.image_filename = name.downcase.gsub(/[\W_]/,'') + '.jpg'
       end
     end
-    keyword_names = ["single-story", "two-story", "3 to 5 stories", "6 to 10 stories", "11 to 20 stories",
-                  "Commercial and Office", "Educational and Research", "Healthcare", "Industrial",
-                  "Interior Design", "Landscape Architecture", "Portrait", "Residential",
-                  "Residential-Housing development", "Residential-Multi-family", "Residential-Single-family",
-                  "Single-family", "Urban Design", "Student projects"]
+    keyword_names = ["11 to 20 stories", "3 to 5 stories", "6 to 10 stories", "Associations and committees",
+                     "Awards", "Biographical information", "Commercial and Office", "Educational and research",
+                     "Faculty papers", "Healthcare", "Historic preservation", "Industrial", "Interior Design",
+                     "Landscape Architecture", "Office records", "Personal papers", "Portrait",
+                     "Professional papers", "Project records", "Public buildings (governmental buildings)",
+                     "Reference files", "Religious building spaces", "Renovations", "Residential",
+                     "Residential-Housing development", "Residential-Multi-family", "Residential-Single-family",
+                     "Single-family", "Single-story", "Student work", "Travel", "Two-story", "Urban Design"]
     keyword_names.each do |name|
       ControlledVocab.find_or_create_by(name: name) do |c_v|
         c_v.field = 'keyword_sim'

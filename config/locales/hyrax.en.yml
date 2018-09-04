@@ -116,16 +116,12 @@ en:
         header: Save Item
     batch_uploads:
       new:
-        header: Batch Attach Files to Items
+        header: Batch Create New Items
         in_collections: These Items in Collections
       progress:
         header: Save Items
       files:
         instructions: Each file will be attach to the corresponding item based on the naming convention.
-    batch_import:
-      new:
-        header: Batch Import Items
-        after_import_html: "Your metadata are being imported by %{application_name} in the background. Items will be marked <span class=\"label label-danger\" title=\"Private\">Private</span> until this process is complete (shouldn't take too long, hang in there!). You may need to refresh this page to see these updates." 
     collection:
       actions:
         add_works:
